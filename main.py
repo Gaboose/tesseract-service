@@ -15,7 +15,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.write("Hello, world")
 
 class ReadHandler(tornado.web.RequestHandler):
-    def get(self):
+    def put(self):
         data = b64decode(self.request.body)
         if len(data) == 0:
             self.write('Error: empty body')
