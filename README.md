@@ -16,7 +16,7 @@ import http.client
 from base64 import b64encode
 with open("hello.png", "rb") as file:
   body = b64encode(file.read())
-conn = http.client.HTTPConnection("http://tesseract-ocr.herokuapp.com")
+conn = http.client.HTTPConnection("tesseract-ocr.herokuapp.com", 80)
 conn.request("PUT", "/read", body)
 print(conn.getresponse().read())
 conn.close()
